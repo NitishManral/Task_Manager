@@ -1,6 +1,6 @@
 package com.nitish.employee_service.model;
 
-import com.nitish.task_service.model.structure.Privilege;
+import com.nitish.employee_service.model.structure.Privilege;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
