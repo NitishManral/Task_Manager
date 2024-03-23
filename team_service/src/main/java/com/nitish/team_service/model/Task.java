@@ -1,27 +1,29 @@
 package com.nitish.team_service.model;
 
-import com.nitish.task_service.model.structure.Privilege;
+import com.nitish.task_service.model.structure.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 
 @Entity
-@Table(name = "Employee")
-public class Employee {
+@Table(name = "Task")
+public class Task {
     @Id
     private Long id;
-    private String name;
-    private String email;
+    private String title;
+    private String description;
     @Enumerated(EnumType.STRING)
-    private Privilege privilege;
-    private String password;
+    private Status status;
+    @ManyToOne
+    @JoinColumn(name = "assigneeId")
+    private Team assigneeId;
 
     // getters and setters
 }

@@ -38,7 +38,7 @@ public class TaskController {
     @PostMapping("/task")
     public ResponseEntity<CustomResponseEntity> getTask(@RequestBody Task task){
         // TODO: create task and return task id
-        task.setId(taskList.size() + 1);
+        task.setId((long) (taskList.size() + 1));
         taskList.add(task);
         System.out.println(task.toString());
         return new ResponseEntity<>(new CustomResponseEntity(200,"Task created",task),HttpStatus.OK);

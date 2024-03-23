@@ -1,16 +1,15 @@
-package com.nitish.team_service.model;
+package com.nitish.employee_service.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
+@NoArgsConstructor
 public class LoginRequest {
     private String username;
     private String password;
-
 }

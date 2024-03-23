@@ -1,4 +1,4 @@
-package com.nitish.team_service.model;
+package com.nitish.task_service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

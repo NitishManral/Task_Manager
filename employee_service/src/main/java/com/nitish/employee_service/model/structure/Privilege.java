@@ -1,4 +1,4 @@
-package com.nitish.employee_service.Model.structure;
+package com.nitish.employee_service.model.structure;
 
 public enum Privilege {
     ADMIN,

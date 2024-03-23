@@ -1,7 +1,6 @@
-package com.nitish.task_service.model;
+package com.nitish.employee_service.model;
 
 import com.nitish.task_service.model.structure.Status;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

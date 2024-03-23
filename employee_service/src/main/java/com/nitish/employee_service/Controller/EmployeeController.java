@@ -1,6 +1,8 @@
 package com.nitish.employee_service.Controller;
 
 import com.nitish.employee_service.component.JwtUtil;
+import com.nitish.employee_service.model.Employee;
+import com.nitish.employee_service.model.LoginRequest;
 import com.nitish.employee_service.services.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nitish.employee_service.Model.LoginRequest;
 import com.nitish.employee_service.custom.CustomResponseEntity;
 
 import java.nio.charset.StandardCharsets;
@@ -19,6 +20,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 public class EmployeeController {
@@ -64,7 +66,7 @@ public class EmployeeController {
             customResponseEntity = new CustomResponseEntity(400, "Username or password is missing", null);
             return new ResponseEntity<>(customResponseEntity, HttpStatus.BAD_REQUEST);
         }
-        employee.setId(employees.size() + 1);
+        employee.setId((long) (employees.size() + 1));
         employee.setPassword(hash256(employee.getPassword()));
         employees.add(employee);
         customResponseEntity = new CustomResponseEntity(200, "Employee registered successfully", employee);
